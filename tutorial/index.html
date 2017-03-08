@@ -1,0 +1,77 @@
+<body>
+<div>
+    <h2>Kafka Stateful Stream Processor</h2>
+</div>
+<div>
+    This is an activator project showcasing stateful stream processing using Kafka KStream.
+    <br/><br/>
+    Here we are using:
+    <br/><br/>
+    <b>Kafka Client</b> for Kafka API<br/>
+    <b>Twitter4J Streaming</b> as a source.<br/>
+    <b>Typesafe Config</b> to read configuration file.<br/>
+    <b>Kafka Streaming</b> to process stream<br/>
+</div>
+<div>
+    <h2>Steps to Install and Run Zookeeper and Kafka on your system :</h2>
+    <b>Step 1:</b> Download Kafka<br/>
+    Download Kafka from <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.1.1/kafka_2.11-0.10.1.1.tgz">here</a><br/>
+    <b>Step 2:</b> Extract downloaded file<br/>
+    <pre><code>
+        tar -xzvf kafka_2.11-0.10.1.1.tgz
+        cd kafka_2.11-0.10.1.1
+    </code></pre>
+
+    <b>Step 3:</b> Start Servers<br/>
+    Start Zookeeper:<br/>
+
+    <pre><code>
+        bin/zookeeper-server-start.sh config/zookeeper.properties
+    </code></pre>
+
+    Start Kafka server:
+    <pre><code>
+        bin/kafka-server-start.sh config/server.properties
+    </code></pre>
+</div>
+
+<div>
+    <h2>Clone Project</h2>
+    <pre><code>
+        git clone git@github.com:knoldus/activator-stateful-kstream-kafka.git
+        cd activator-kstream-kafka
+        bin/activator clean compile
+    </code></pre>
+</div>
+
+<div>
+    <h2>Start Tweet Producer</h2>
+    <pre><code>
+        bin/activator "run-main com.knoldus.demo.ProducerDemo"
+    </code></pre>
+    This will start fetching tweets and push every tweet into the Kafka queue.
+</div>
+
+<div>
+    <h2>Start Stream Processor</h2>
+    <pre><code>
+        bin/activator "run-main com.knoldus.demo.KStreamDemo"
+    </code></pre>
+
+    This will start stream processing.<br/>
+
+</div>
+
+<div>
+    <h2>Start Consumer</h2>
+    <pre><code>
+        bin/activator "run-main com.knoldus.demo.ConsumerDemo"
+    </code></pre>
+
+    This will start hashtag count.<br/>
+</div>
+
+<div>
+    For any issue please raise a ticket @ <a href="https://github.com/knoldus/activator-stateful-kstream-kafka/issues">Github Issue</a>
+</div>
+</body>

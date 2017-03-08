@@ -22,14 +22,15 @@ public class TweetConsumer {
         props.put("auto.offset.reset", "earliest");
         props.put("session.timeout.ms", "30000");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<>(props);
+        props.put("value.deserializer", "org.apache.kafka.common.serialization.LongDeserializer");
+        KafkaConsumer<String, Long> kafkaConsumer = new KafkaConsumer<>(props);
         kafkaConsumer.subscribe((Collections.singletonList(kafkaTopic)));
         while (true) {
-            ConsumerRecords<String, String> records = kafkaConsumer.poll(100);
-            for (ConsumerRecord<String, String> record : records) {
-                System.out.println("Received" + record.value());
+            ConsumerRecords<String, Long> records = kafkaConsumer.poll(100);
+            for (ConsumerRecord<String, Long> record : records) {
+                System.out.println("Received: " + record.key() + " ---> " + record.value());
             }
+            System.out.println("\n\n=======================\n\n");
         }
     }
 

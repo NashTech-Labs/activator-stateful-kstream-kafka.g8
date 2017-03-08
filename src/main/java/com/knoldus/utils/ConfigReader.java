@@ -31,5 +31,8 @@ public class ConfigReader {
         return conf.getString("kafka.topic");
     }
 
+    public String getKStreamTopic(){
+        return conf.getString("kstream.topic");
+    }
 
 }

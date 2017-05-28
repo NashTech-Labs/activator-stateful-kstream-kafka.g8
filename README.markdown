@@ -1,6 +1,7 @@
-#Kafka Stateful Stream Processor
+A [Giter8][g8] template for showcasing stateful stream processing using Kafka KStream.
 
-This is an activator project showcasing stateful stream processing using Kafka KStream.
+Kafka Stateful Stream Processor
+---------------------------------
 
 **Kafka Client** for Kafka API
 
@@ -22,7 +23,7 @@ Step 2: Extract downloaded file
 ```bash
 tar -xzvf kafka_2.11-0.10.1.1.tgz
 cd kafka_2.11-0.10.1.1
-```        
+```
     
 Step 3: Start Servers
 
@@ -76,3 +77,12 @@ This will start hashtag count.
 
 ---
 For any issue please raise a ticket @ [Github Issue](https://github.com/knoldus/activator-stateful-kstream-kafka/issues)
+
+Template license
+----------------
+Written in ​ 2017​ by ​ [Knoldus Software LLP](http://knoldus.com)
+
+To the extent possible under law, the author(s) have dedicated all copyright and related and neighboring rights to this template to the public domain worldwide.
+This template is distributed without any warranty. See
+<http://creativecommons.org/publicdomain/zero/1.0/>.
+[g8]: http://www.foundweekends.org/giter8/
